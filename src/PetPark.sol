@@ -10,6 +10,11 @@ contract PetPark {
         Parrot
     }
 
+    enum Gender {
+        Male,
+        Female
+    }
+
     struct Animal {
         uint age;
         string gender;
@@ -49,9 +54,9 @@ contract PetPark {
             "You have already borrowed an animal"
         );
         require(
-            (_gender == "Male" &&
+            (_gender == Gender.Male &&
                 (_animalType == AnimalType.Dog || _animalType.Fish)) ||
-                (_gender == "Female" &&
+                (_gender == Gender.Female &&
                     (_animalType != AnimalType.Cat || _age >= 40)),
             "Invalid combination of gender and animal type"
         );
