@@ -17,7 +17,7 @@ contract PetPark {
 
     struct Animal {
         uint age;
-        string gender;
+        Gender gender;
         AnimalType animalType;
     }
 
@@ -46,7 +46,7 @@ contract PetPark {
 
     function borrow(
         uint _age,
-        string memory _gender,
+        Gender _gender,
         AnimalType _animalType
     ) external {
         require(
