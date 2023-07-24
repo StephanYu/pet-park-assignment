@@ -55,7 +55,8 @@ contract PetPark {
         );
         require(
             (_gender == Gender.Male &&
-                (_animalType == AnimalType.Dog || _animalType.Fish)) ||
+                (_animalType == AnimalType.Dog ||
+                    _animalType == AnimalType.Fish)) ||
                 (_gender == Gender.Female &&
                     (_animalType != AnimalType.Cat || _age >= 40)),
             "Invalid combination of gender and animal type"
